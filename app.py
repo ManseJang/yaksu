@@ -27,6 +27,7 @@ with st.sidebar:
     - **사용 방법:**
       1. 하단의 입력창에 질문을 입력하세요.
       2. 엔터를 누르거나 '전송' 버튼을 누르면, 답변을 받을 수 있습니다.
+      © 2025 Jang Se Man <jangseman12@gmail.com>
     """)
 
 #####################
@@ -80,6 +81,8 @@ def get_relevant_context(query, chunks, chunk_embeddings, top_k=3):
 
 def generate_answer(query, context):
     prompt = f"""아래의 학교 문서를 참고하여 질문에 답변해 주세요.
+    약수초등학교에 관련된 질문만 답변을 해주세요.
+    문서에 나와있지 않은 모르는 내용에 대해서는 죄송합니다. 정보를 찾을 수 없습니다. 라고 대답해주세요.
 
 [문서 내용]
 {context}
